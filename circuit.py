@@ -410,7 +410,7 @@ elif rec_LFP and rec_DIPOLES:
 	SPIKES, OUTPUT, DIPOLEMOMENT = network.simulate(electrode=LFPelectrode,**simargs)
 elif not rec_LFP and rec_DIPOLES:
 	print('Simulating, recording SPIKES and DIPOLEMOMENTS ... ') if RANK==0 else None
-	SPIKES, DIPOLEMOMENT = network.simulate(**simargs)
+	SPIKES, _ = network.simulate(**simargs)
 elif not rec_LFP and not rec_DIPOLES:
 	print('Simulating, recording SPIKES ... ') if RANK==0 else None
 	SPIKES = network.simulate(**simargs)
